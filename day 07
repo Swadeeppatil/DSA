@@ -1,0 +1,41 @@
+Given an unsorted array arr[]. Rotate the array to the left (counter-clockwise direction) by d steps, where d is a positive integer. Do the mentioned change in the array in place.
+
+
+splun:-
+
+class Solution {
+  
+    static void rotateArr(int arr[], int d) {
+        d=d%arr.length;
+
+// reverse an array from start to d i,e 0 to d-1
+
+        reverse(arr,0,d-1);
+
+//reverse an array from d to last element of array
+
+
+        reverse(arr,d,arr.length-1);
+
+// reverse an array from start to end i,e 0 to n-1
+
+
+        reverse(arr,0,arr.length-1);
+        
+            
+        }
+    static void reverse(int arr[],int start, int end){
+
+// swapping or reversing elements
+
+
+        while(start<=end){
+            int temp=arr[start];
+            arr[start]=arr[end];
+            arr[end]=temp;
+            start++;
+            end--;
+        }
+    }    
+    
+}
