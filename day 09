@@ -1,0 +1,34 @@
+You are given an array of integer arr[] where each number represents a vote to a candidate. Return the candidates that have votes greater than one-third of the total votes, If there's not a majority vote, return an empty array. 
+
+
+solun:-
+
+class Solution {
+  public:
+    // Function to find the majority elements in the array
+    vector<int> findMajority(vector<int>& arr) {
+        // Your code goes here.
+        map<int,int> m;
+        
+        int n=arr.size();
+        
+        vector<int> ans;
+        
+        for(int i=0;i<n;i++)
+        {
+            m[arr[i]]++;
+        }
+        
+        int x=n/3;
+        for(auto &i:m)
+        {
+            if(i.second>x)
+            {
+                ans.push_back(i.first);
+            }
+            
+        }
+        return ans;
+    }
+};
+
