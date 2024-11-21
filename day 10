@@ -1,0 +1,22 @@
+The cost of stock on each day is given in an array price[]. Each day you may decide to either buy or sell the stock at price[i], you can even buy and sell the stock on the same day. Find the maximum profit that you can get.
+Input: prices[] = [100, 180, 260, 310, 40, 535, 695]
+Output: 865
+
+
+solun:-
+
+class Solution {
+    public int maximumProfit(int arr[]) {
+        int ans=0;
+        int pv=arr[0];
+        int n=arr.length;
+        for(int i=1;i<n;i++){
+            if(pv<arr[i]){
+                ans+=arr[i]-pv;
+                pv=arr[i];
+            }
+            pv=Math.min(arr[i],pv);
+        }
+        return ans;
+    }
+}
