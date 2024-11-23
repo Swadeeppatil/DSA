@@ -1,0 +1,19 @@
+Given an integer array arr[]. You need to find and return the maximum sum possible from all the subarrays.
+
+Examples:
+
+Input: arr[] = [2, 3, -8, 7, -1, 2, 3]
+Output: 11
+Explanation: The subarray {7, -1, 2, 3} has the largest sum 11.
+
+solun:-
+class Solution:
+    def maxSubArraySum(self, arr):
+        maxim = float('-inf')
+        total = 0
+        for num in arr:
+            total += num
+            maxim = max(maxim, total)
+            if total < 0:
+                total = 0
+        return maxim
