@@ -1,0 +1,17 @@
+Given a string s consisting of lowercase Latin Letters. Return the first non-repeating character in s. If there is no non-repeating character, return '$'.
+class Solution {
+  public:
+char nonRepeatingChar(string &s) {
+        map<char, int> m;
+        int n=s.length();
+        
+        for(int i=0;i<n; i++)
+            m[s[i]]++;
+        
+        for(int i=0;i<n; i++)
+            if(m[s[i]] == 1)
+                return s[i];
+        
+        return '$';
+    }
+};
